@@ -144,9 +144,13 @@ function mapSVG(){
       });
     }
   });
+  // a pulsing play button on every built thing that has a game (the ring toss stall draws its own)
+  for(var gid in PLAY_AT) if(o[gid] && ITEM_GAME[gid]){ var q=PLAY_AT[gid];
+    s+='<g class="plot" data-act="play:'+ITEM_GAME[gid]+'" aria-hidden="true"><g class="pulse"><circle cx="'+q[0]+'" cy="'+q[1]+'" r="10" fill="var(--sun)" stroke="'+INK+'" stroke-width="2"/><path d="M'+(q[0]-3)+' '+(q[1]-5)+' L'+(q[0]+5)+' '+q[1]+' L'+(q[0]-3)+' '+(q[1]+5)+' Z" fill="'+INK+'"/></g></g>'; }
   s+=ART.gate()+'</svg>';
   return s;
 }
+var PLAY_AT={duckpond:[322,-82], maze:[110,-82], dodgems:[120,-172], arcade:[324,-172], tower:[204,-150], wheel:[110,154], coaster:[320,40]};
 function thumb(it){
   return '<svg class="thumb" viewBox="'+it.box+'" aria-hidden="true"><rect x="-200" y="-200" width="900" height="900" fill="var(--lawn)"/>'+ART[it.id]('-t')+'</svg>';
 }
