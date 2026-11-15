@@ -168,7 +168,7 @@ function vQuiz(){
   s = '<div class="row between"><h1>'+quiz.title+'</h1><span class="chip">Question '+(quiz.i+1)+' of '+n+'</span></div>'+
     '<div class="progress" aria-hidden="true"><i style="width:'+((quiz.i+(done ? 1 : 0))/n*100)+'%"></i></div>'+
     '<div class="qtext" id="qtext">'+q.text+'</div>'+
-    (q.calc ? '<div><button class="btn plain" data-act="calcToggle">Calculator</button></div>' : '')+
+    '<div><button class="btn plain" data-act="calcToggle">Calculator</button></div>'+
     optsHTML(q, quiz.picked, 'answer');
   if(done){
     var ok = quiz.picked === q.correct;
@@ -212,7 +212,7 @@ function vPlan(){
   '<li>Each correct quiz answer earns 10 coins the first time you do that quiz and 5 coins on a repeat. Every quiz you finish earns 3 ride tickets.</li>'+
   '<li>A zone test has two questions from each lesson in the zone. The pass mark is 70%. The first pass earns 100 coins and 3 ride tickets, and it unlocks that zone’s ride in the shop.</li>'+
   '<li>The first correct practice answer on each More help card earns 5 coins.</li>'+
-  '<li>Coins buy things for the park. Six of them have a game, and each game costs 1 ride ticket.</li>'+
+  '<li>Coins buy things for the park. '+['None','One','Two','Three','Four','Five','Six','Seven','Eight','Nine'][Object.keys(ITEM_GAME).length]+' of them have a game, and each game costs 1 ride ticket.</li>'+
   '<li>Every question has new numbers each time, so a quiz can be repeated for practice.</li>'+
   '<li>Progress is saved on this device, in this browser. Nothing is sent anywhere.</li></ul></section>'+
   '<section><h2>What the app covers</h2><p>Year 10 maths in '+ZONES.length+' zones, with '+ids.length+' lessons, '+types+' types of question and '+cards+' More help cards on earlier work.</p><ul>'+

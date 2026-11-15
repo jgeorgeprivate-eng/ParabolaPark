@@ -19,7 +19,7 @@ var ZONES = [
 ];
 
 /* ---------- state ---------- */
-function fresh(){ return {coins:0, tickets:0, owned:{}, lessons:{}, tests:{}, helpDone:{}, tossBest:0, best:{}}; }
+function fresh(){ return {coins:0, tickets:0, owned:{}, lessons:{}, tests:{}, helpDone:{}, tossBest:0, best:{}, fourWins:0, othWins:0}; }
 var state = fresh();
 var justBuilt = null;
 function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
